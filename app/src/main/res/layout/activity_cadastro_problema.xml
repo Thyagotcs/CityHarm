@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.edu.pdm.cityharm.principal.PrincipalActivity">
+    tools:context="br.edu.pdm.cityharm.cadastro.problema.CadastroProblemaActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,21 +16,26 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:weightSum="1">
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/imvFotoProblema"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtCoordenadas"
+            android:layout_weight=".03"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrar problema"
-            android:id="@+id/btnRegistrarProblema"
-            android:layout_weight="0.12"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Abrir mapa de problemas"
-            android:id="@+id/btnAbrirMapaProblemas"
-            android:layout_weight="0.12"/>
+            android:text="Confirmar"
+            android:id="@+id/btnConfirmar"
+            android:layout_weight="0.03"/>
     </LinearLayout>
 </RelativeLayout>

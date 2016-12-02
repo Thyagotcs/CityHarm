@@ -8,6 +8,12 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="23" />
 
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,7 +29,11 @@
         </activity>
         <activity android:name="br.edu.pdm.cityharm.LoginActivity_" >
         </activity>
-        <activity android:name="br.edu.pdm.cityharm.principal.PrincipalActivity" >
+        <activity android:name="br.edu.pdm.cityharm.principal.PrincipalActivity_" >
+        </activity>
+        <activity android:name="br.edu.pdm.cityharm.cadastro.usuario.CadastroUsuarioActivity_" >
+        </activity>
+        <activity android:name="br.edu.pdm.cityharm.cadastro.problema.CadastroProblemaActivity_" >
         </activity>
     </application>
 

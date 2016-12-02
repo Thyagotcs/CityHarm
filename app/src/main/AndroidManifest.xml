@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="br.edu.pdm.cityharm">
 
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +24,11 @@
         </activity>
         <activity android:name=".LoginActivity_">
         </activity>
-        <activity android:name=".principal.PrincipalActivity">
+        <activity android:name=".principal.PrincipalActivity_">
+        </activity>
+        <activity android:name=".cadastro.usuario.CadastroUsuarioActivity_">
+        </activity>
+        <activity android:name=".cadastro.problema.CadastroProblemaActivity_">
         </activity>
     </application>
 

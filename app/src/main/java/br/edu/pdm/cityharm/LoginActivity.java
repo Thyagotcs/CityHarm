@@ -14,9 +14,10 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
+import br.edu.pdm.cityharm.cadastro.usuario.CadastroUsuarioActivity_;
 import br.edu.pdm.cityharm.helper.DatabaseHelper;
 import br.edu.pdm.cityharm.model.Usuario;
-import br.edu.pdm.cityharm.principal.PrincipalActivity;
+import br.edu.pdm.cityharm.principal.PrincipalActivity_;
 
 
 @EActivity(R.layout.activity_login)
@@ -41,9 +42,9 @@ public class LoginActivity extends AppCompatActivity {
   }
 
   public void abrirRegistro(View view) {
-   // Intent itRegistro = new Intent(this, CadastroActivity_.class);
+    Intent itRegistro = new Intent(this, CadastroUsuarioActivity_.class);
     // espera resultado da tela de cadastro de usuario
-  //  startActivityForResult(itRegistro, 100);
+    startActivityForResult(itRegistro, 100);
   }
 
   @Click({R.id.btnSobre, R.id.btnLogin})
@@ -58,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         Usuario usuario = databaseHelper.getUsuarioByLoginSenha(strLogin, strSenha);
         if (usuario != null) {
        // if (strLogin != "") {
-          Intent it = new Intent(this, PrincipalActivity.class);
+          Intent it = new Intent(this, PrincipalActivity_.class);
           it.putExtra("usuario", usuario);
           startActivity(it);
           finish();
