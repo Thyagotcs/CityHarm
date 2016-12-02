@@ -23,7 +23,7 @@ import br.edu.pdm.cityharm.R;
 @EActivity(R.layout.activity_cadastro_problema)
 public class CadastroProblemaActivity extends AppCompatActivity {
 
-  GoogleApiClient client;
+
 
   @ViewById
   public ImageView imvFotoProblema;
@@ -37,13 +37,6 @@ public class CadastroProblemaActivity extends AppCompatActivity {
   @AfterViews
   public void buscarCoordenadas(){
 
-    if (mGoogleApiClient == null) {
-      mGoogleApiClient = new GoogleApiClient.Builder(this)
-              .addConnectionCallbacks(this)
-              .addOnConnectionFailedListener(this)
-              .addApi(LocationServices.API)
-              .build();
-    }
 
 
 

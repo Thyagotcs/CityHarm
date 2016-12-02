@@ -4,16 +4,16 @@
         "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
+        "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
         "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
         "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
         "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
         "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
