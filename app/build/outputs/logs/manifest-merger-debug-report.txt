@@ -4765,12 +4765,12 @@ ADDED from C:\CityHarm\app\src\main\AndroidManifest.xml:48:9-50:54
 		ADDED from C:\CityHarm\app\src\main\AndroidManifest.xml:50:13-52
 	android:name
 		ADDED from C:\CityHarm\app\src\main\AndroidManifest.xml:49:13-58
-activity#br.edu.pdm.cityharm.mapa.MapaProblemasActivity
+activity#br.edu.pdm.cityharm.mapa.MapaProblemasActivity_
 ADDED from C:\CityHarm\app\src\main\AndroidManifest.xml:52:9-55:20
 	android:label
 		ADDED from C:\CityHarm\app\src\main\AndroidManifest.xml:54:13-66
 	android:name
-		ADDED from C:\CityHarm\app\src\main\AndroidManifest.xml:53:13-55
+		ADDED from C:\CityHarm\app\src\main\AndroidManifest.xml:53:13-56
 uses-sdk
 INJECTED from C:\CityHarm\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:24.2.0] C:\CityHarm\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:21:5-23:78

@@ -10,19 +10,20 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+
 import br.edu.pdm.cityharm.R;
 
+@EActivity(R.layout.activity_mapa_problemas)
 public class MapaProblemasActivity extends FragmentActivity implements OnMapReadyCallback {
 
   private GoogleMap mMap;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_mapa_problemas);
+  @AfterViews
+  public void afterViews() {
     // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-    SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-            .findFragmentById(R.id.map);
+    SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
     mapFragment.getMapAsync(this);
   }
 
@@ -41,8 +42,10 @@ public class MapaProblemasActivity extends FragmentActivity implements OnMapRead
     mMap = googleMap;
 
     // Add a marker in Sydney and move the camera
-    LatLng sydney = new LatLng(-34, 151);
-    mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-    mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    //LatLng unoesc = new LatLng(-26.724138, -53.538184);
+    //mMap.addMarker(new MarkerOptions().position(unoesc).title("Unoesc SMO"));
+    //mMap.moveCamera(CameraUpdateFactory.newLatLng(unoesc));
   }
+
+
 }

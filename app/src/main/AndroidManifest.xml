@@ -50,7 +50,7 @@
             android:value="@string/google_maps_key"/>
 
         <activity
-            android:name=".mapa.MapaProblemasActivity"
+            android:name=".mapa.MapaProblemasActivity_"
             android:label="@string/title_activity_mapa_problemas">
         </activity>
     </application>

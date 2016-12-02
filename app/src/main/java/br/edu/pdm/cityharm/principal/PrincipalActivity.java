@@ -16,6 +16,7 @@ import br.edu.pdm.cityharm.R;
 import br.edu.pdm.cityharm.cadastro.problema.CadastroProblemaActivity;
 import br.edu.pdm.cityharm.cadastro.problema.CadastroProblemaActivity_;
 import br.edu.pdm.cityharm.mapa.MapaProblemasActivity;
+import br.edu.pdm.cityharm.mapa.MapaProblemasActivity_;
 
 @EActivity(R.layout.activity_principal)
 public class PrincipalActivity extends AppCompatActivity {
@@ -35,7 +36,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
   @Click({R.id.btnAbrirMapaProblemas})
   public void onClickAbrirMapaProblemas(View view){
-    Intent itMapaProblemas = new Intent(this, MapaProblemasActivity.class);
+    Intent itMapaProblemas = new Intent(this, MapaProblemasActivity_.class);
     startActivityForResult(itMapaProblemas, 130);
   }
 

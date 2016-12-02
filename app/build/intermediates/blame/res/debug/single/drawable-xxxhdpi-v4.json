@@ -348,12 +348,12 @@
         "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-places\\10.0.1\\res\\drawable-xxxhdpi-v4\\powered_by_google_light.png"
     },
     {
-        "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\quantum_ic_play_circle_filled_white_36.png",
-        "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\10.0.1\\res\\drawable-xxxhdpi-v4\\quantum_ic_play_circle_filled_white_36.png"
-    },
-    {
         "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\ic_cast_grey.png",
         "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable-xxxhdpi-v4\\ic_cast_grey.png"
+    },
+    {
+        "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\quantum_ic_play_circle_filled_white_36.png",
+        "source": "C:\\CityHarm\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\10.0.1\\res\\drawable-xxxhdpi-v4\\quantum_ic_play_circle_filled_white_36.png"
     },
     {
         "merged": "C:\\CityHarm\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\quantum_ic_play_arrow_white_24.png",

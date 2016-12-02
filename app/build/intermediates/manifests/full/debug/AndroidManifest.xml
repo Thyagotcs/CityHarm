@@ -73,7 +73,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="br.edu.pdm.cityharm.mapa.MapaProblemasActivity"
+            android:name="br.edu.pdm.cityharm.mapa.MapaProblemasActivity_"
             android:label="@string/title_activity_mapa_problemas" >
         </activity>
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
