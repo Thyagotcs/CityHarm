@@ -66,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         String strSenha = edtSenha.getText().toString();
         Usuario usuario = databaseHelper.getUsuarioByLoginSenha(strLogin, strSenha);
         if (usuario != null) {
-       // if (strLogin != "") {
           Intent it = new Intent(this, PrincipalActivity_.class);
           it.putExtra("usuario", usuario);
           startActivity(it);
