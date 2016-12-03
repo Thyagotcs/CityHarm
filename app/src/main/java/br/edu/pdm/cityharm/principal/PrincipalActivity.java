@@ -1,10 +1,7 @@
 package br.edu.pdm.cityharm.principal;
 
 import android.content.Intent;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,9 +10,7 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 import br.edu.pdm.cityharm.R;
-import br.edu.pdm.cityharm.cadastro.problema.CadastroProblemaActivity;
 import br.edu.pdm.cityharm.cadastro.problema.CadastroProblemaActivity_;
-import br.edu.pdm.cityharm.mapa.MapaProblemasActivity;
 import br.edu.pdm.cityharm.mapa.MapaProblemasActivity_;
 
 @EActivity(R.layout.activity_principal)

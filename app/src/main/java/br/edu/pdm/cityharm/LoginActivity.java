@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +14,6 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import br.edu.pdm.cityharm.about.SobreActivity;
 import br.edu.pdm.cityharm.about.SobreActivity_;
 import br.edu.pdm.cityharm.cadastro.usuario.CadastroUsuarioActivity_;
 import br.edu.pdm.cityharm.helper.DatabaseHelper;
@@ -58,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
         String strSenha = edtSenha.getText().toString();
         Usuario usuario = databaseHelper.getUsuarioByLoginSenha(strLogin, strSenha);
         if (usuario != null) {
-       // if (strLogin != "") {
           Intent it = new Intent(this, PrincipalActivity_.class);
           it.putExtra("usuario", usuario);
           startActivity(it);
@@ -75,6 +72,5 @@ public class LoginActivity extends AppCompatActivity {
   public void onClickSobre(View view) {
     Intent it = new Intent(this, SobreActivity_.class);
     startActivityForResult(it,150);
-    //setContentView(R.layout.activity_sobre);
   }
 }

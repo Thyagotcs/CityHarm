@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
-import android.location.LocationManager;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -64,7 +63,6 @@ public class CadastroProblemaActivity extends AppCompatActivity implements Googl
   public void resultCamera(int resultCode, Intent data) {
     if (resultCode == RESULT_OK) {
       Bitmap foto = (Bitmap) data.getExtras().get("data");
-      //Bitmap fotoRedimensionada = Bitmap.createScaledBitmap(foto, imvFotoProblema.getWidth(), imvFotoProblema.getHeight(), false);
       imvFotoProblema.setImageBitmap(foto);
     }
   }

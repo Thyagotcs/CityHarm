@@ -1,14 +1,10 @@
 package br.edu.pdm.cityharm.mapa;
 
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -27,7 +23,6 @@ public class MapaProblemasActivity extends FragmentActivity implements OnMapRead
     mapFragment.getMapAsync(this);
   }
 
-
   /**
    * Manipulates the map once available.
    * This callback is triggered when the map is ready to be used.
@@ -41,10 +36,6 @@ public class MapaProblemasActivity extends FragmentActivity implements OnMapRead
   public void onMapReady(GoogleMap googleMap) {
     mMap = googleMap;
 
-    // Add a marker in Sydney and move the camera
-    //LatLng unoesc = new LatLng(-26.724138, -53.538184);
-    //mMap.addMarker(new MarkerOptions().position(unoesc).title("Unoesc SMO"));
-    //mMap.moveCamera(CameraUpdateFactory.newLatLng(unoesc));
   }
 
 
