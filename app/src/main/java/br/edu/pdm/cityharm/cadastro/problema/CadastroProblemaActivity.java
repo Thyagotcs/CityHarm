@@ -73,6 +73,8 @@ public class CadastroProblemaActivity extends AppCompatActivity implements Googl
 
     DatabaseHelper helper = new DatabaseHelper(this);
     helper.saveOrUpdateProblema(novoProblema);
+
+    finish();
   }
 
   @AfterViews
