@@ -6,16 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.OnActivityResult;
 import org.androidannotations.annotations.ViewById;
 
-import br.edu.pdm.cityharm.about.SobreActivity;
 import br.edu.pdm.cityharm.about.SobreActivity_;
 import br.edu.pdm.cityharm.cadastro.usuario.CadastroUsuarioActivity_;
 import br.edu.pdm.cityharm.helper.DatabaseHelper;
@@ -44,11 +43,20 @@ public class LoginActivity extends AppCompatActivity {
     txtRegistrar.setPaintFlags(txtRegistrar.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
   }
 
+  @Click({R.id.txtRegistrar})
   public void abrirRegistro(View view) {
     Intent itRegistro = new Intent(this, CadastroUsuarioActivity_.class);
     // espera resultado da tela de cadastro de usuario
     startActivityForResult(itRegistro, 100);
   }
+
+  @OnActivityResult(100)
+  public void onResultCadastroUsuario(int resultCode, Intent data){
+    if (resultCode == RESULT_OK){
+      edtLogin.setText(data.getExtras().getString("login"));
+    }
+  }
+
 
   @Click({R.id.btnLogin})
   public void onClickLogin(View view) {
@@ -75,6 +83,5 @@ public class LoginActivity extends AppCompatActivity {
   public void onClickSobre(View view) {
     Intent it = new Intent(this, SobreActivity_.class);
     startActivityForResult(it,150);
-    //setContentView(R.layout.activity_sobre);
   }
 }

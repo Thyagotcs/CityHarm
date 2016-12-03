@@ -56,7 +56,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.10"
         android:gravity="center"
-        android:onClick="abrirRegistro"
         android:clickable="true"/>
 
 

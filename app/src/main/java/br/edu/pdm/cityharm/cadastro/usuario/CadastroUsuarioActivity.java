@@ -70,6 +70,10 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
       DatabaseHelper helper = new DatabaseHelper(this);
       helper.saveOrUpdateUsuario(novoUsuario);
 
+      Intent intent = new Intent();
+      intent.putExtra("login", novoUsuario.getLogin());
+      setResult(RESULT_OK, intent);
+      super.finish();
     }
 
   }
