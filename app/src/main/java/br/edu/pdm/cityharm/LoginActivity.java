@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -14,6 +15,8 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
+import br.edu.pdm.cityharm.about.SobreActivity;
+import br.edu.pdm.cityharm.about.SobreActivity_;
 import br.edu.pdm.cityharm.cadastro.usuario.CadastroUsuarioActivity_;
 import br.edu.pdm.cityharm.helper.DatabaseHelper;
 import br.edu.pdm.cityharm.model.Usuario;
@@ -28,9 +31,9 @@ public class LoginActivity extends AppCompatActivity {
   @ViewById
   protected EditText edtSenha;
   @ViewById
-  protected ImageButton btnLogin;
+  protected Button btnLogin;
   @ViewById
-  protected ImageButton btnSobre;
+  protected Button btnSobre;
 
   @ViewById
   protected TextView txtRegistrar;
@@ -47,12 +50,9 @@ public class LoginActivity extends AppCompatActivity {
     startActivityForResult(itRegistro, 100);
   }
 
-  @Click({R.id.btnSobre, R.id.btnLogin})
-  public void onClick(View view) {
+  @Click({R.id.btnLogin})
+  public void onClickLogin(View view) {
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
-
-    switch (view.getId()) {
-      case R.id.btnLogin:
         // recuperar valores da tela
         String strLogin = edtLogin.getText().toString();
         String strSenha = edtSenha.getText().toString();
@@ -68,12 +68,13 @@ public class LoginActivity extends AppCompatActivity {
           edtSenha.setText("");
           Toast.makeText(this, R.string.msgLoginErro, Toast.LENGTH_LONG).show();
           edtLogin.requestFocus();
-        }
-        break;
-
-      case R.id.btnSobre:
-        finish();
-        break;
     }
+  }
+
+  @Click({R.id.btnSobre})
+  public void onClickSobre(View view) {
+    Intent it = new Intent(this, SobreActivity_.class);
+    startActivityForResult(it,150);
+    //setContentView(R.layout.activity_sobre);
   }
 }
