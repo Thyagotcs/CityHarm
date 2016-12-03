@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.edu.pdm.cityharm.R;
+import br.edu.pdm.cityharm.model.Problema;
 import br.edu.pdm.cityharm.model.Usuario;
 
 /**
@@ -24,13 +25,13 @@ import br.edu.pdm.cityharm.model.Usuario;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
   // name of the database file for your application -- change to something appropriate for your app
-  private static final String DATABASE_NAME = "tccfreak.db";
+  private static final String DATABASE_NAME = "cityharm.db";
   // any time you make changes to your database objects, you may have to increase the database version
   private static final int DATABASE_VERSION = 1;
 
-  // the DAO object we use to access the SimpleData table
-  private Dao<Usuario, Integer> usuarioDao = null;
   private RuntimeExceptionDao<Usuario, Integer> usuarioRuntimeDao = null;
+
+  private RuntimeExceptionDao<Problema, Integer> problemaRuntimeDao = null;
 
   public DatabaseHelper(Context context) {
     super(context, DATABASE_NAME, null, DATABASE_VERSION, R.raw.ormlite_config);
@@ -45,7 +46,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     try {
       Log.i(DatabaseHelper.class.getName(), "onCreate");
       TableUtils.createTable(connectionSource, Usuario.class);
-
+      TableUtils.createTable(connectionSource, Problema.class);
     } catch (SQLException e) {
       Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
       throw new RuntimeException(e);
@@ -55,10 +56,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     RuntimeExceptionDao<Usuario, Integer> uDao = getUsuarioDao();
     // create some entries in the onCreate
     Usuario usuario = new Usuario();
-    usuario.setNome("tccfreak");
-    usuario.setEmail("tccfreak@teste.com");
-    usuario.setLogin("tccfreak");
-    usuario.setSenha("");
+    usuario.setNome("admin");
+    usuario.setEmail("admin@teste.com");
+    usuario.setLogin("admin");
+    usuario.setSenha("admin");
     uDao.create(usuario);
     Log.i(DatabaseHelper.class.getName(), "created new entries in onCreate!");
 
@@ -82,17 +83,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
   }
 
   /**
-   * Returns the Database Access Object (DAO) for our SimpleData class. It will create it or just give the cached
-   * value.
-   */
-  public Dao<Usuario, Integer> getDao() throws SQLException {
-    if (usuarioDao == null) {
-      usuarioDao = getDao(Usuario.class);
-    }
-    return usuarioDao;
-  }
-
-  /**
    * Returns the RuntimeExceptionDao (Database Access Object) version of a Dao for our SimpleData class. It will
    * create it or just give the cached value. RuntimeExceptionDao only through RuntimeExceptions.
    */
@@ -101,6 +91,13 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
       usuarioRuntimeDao = getRuntimeExceptionDao(Usuario.class);
     }
     return usuarioRuntimeDao;
+  }
+
+  public RuntimeExceptionDao<Problema, Integer> getProblemaDao() {
+    if (problemaRuntimeDao == null) {
+      problemaRuntimeDao = getRuntimeExceptionDao(Problema.class);
+    }
+    return problemaRuntimeDao;
   }
 
   public Usuario getUsuarioByLoginSenha(String login, String senha) {
@@ -122,13 +119,17 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     getUsuarioDao().createOrUpdate(usuario);
   }
 
+  public void saveOrUpdateProblema(Problema problema) {
+    getProblemaDao().createOrUpdate(problema);
+  }
+
   /**
    * Close the database connections and clear any cached DAOs.
    */
   @Override
   public void close() {
     super.close();
-    usuarioDao = null;
     usuarioRuntimeDao = null;
+    problemaRuntimeDao = null;
   }
 }

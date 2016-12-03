@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -12,9 +13,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,12 +26,17 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.LongClick;
 import org.androidannotations.annotations.OnActivityResult;
 import org.androidannotations.annotations.ViewById;
 
+import java.io.ByteArrayOutputStream;
+
 import br.edu.pdm.cityharm.R;
+import br.edu.pdm.cityharm.helper.DatabaseHelper;
+import br.edu.pdm.cityharm.model.Problema;
 
 @EActivity(R.layout.activity_cadastro_problema)
 public class CadastroProblemaActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -45,7 +53,26 @@ public class CadastroProblemaActivity extends AppCompatActivity implements Googl
   public Button btnConfirmar;
 
   @ViewById
+  public EditText edtDescricaoProblema;
+
+  @ViewById
   public TextView txtCoordenadas;
+
+  @Click({R.id.btnConfirmar})
+  public void onClickConfirmar(View view){
+    Bitmap foto = ((BitmapDrawable)imvFotoProblema.getDrawable()).getBitmap();
+    ByteArrayOutputStream sFoto = new ByteArrayOutputStream();
+    foto.compress(Bitmap.CompressFormat.PNG, 100, sFoto);
+
+    Problema novoProblema = new Problema();
+    novoProblema.setFoto(sFoto.toByteArray());
+    novoProblema.setLongitude(longitude);
+    novoProblema.setLatitude(latitude);
+    novoProblema.setDescricaoProblema(edtDescricaoProblema.getText().toString());
+
+    DatabaseHelper helper = new DatabaseHelper(this);
+    helper.saveOrUpdateProblema(novoProblema);
+  }
 
   @AfterViews
   public void buscarCoordenadas() {

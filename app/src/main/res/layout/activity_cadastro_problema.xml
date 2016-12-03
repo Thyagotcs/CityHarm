@@ -20,22 +20,32 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="220dp"
             android:id="@+id/imvFotoProblema"
-            />
+            android:layout_weight="0.02"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/txtCoordenadas"
-            android:layout_weight=".03"/>
+            android:layout_weight="0.02"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtDescricaoProblema"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03"
+            android:hint="Descreva o problema..."
+            android:enabled="true"
+            android:focusable="true"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Confirmar"
             android:id="@+id/btnConfirmar"
-            android:layout_weight="0.03"/>
+            />
     </LinearLayout>
 </RelativeLayout>
