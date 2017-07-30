@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
   public void onResultCadastroUsuario(int resultCode, Intent data){
     if (resultCode == RESULT_OK){
       edtLogin.setText(data.getExtras().getString("login"));
+      edtSenha.requestFocus();
     }
   }
 

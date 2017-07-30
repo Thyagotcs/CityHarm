@@ -1,5 +1,6 @@
 package br.edu.pdm.cityharm.cadastro.usuario;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -57,5 +58,10 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
       super.finish();
     }
 
+  }
+
+  @Click({R.id.btnFechar})
+  public void onClickBtnFechar(View view){
+    finish();
   }
 }
